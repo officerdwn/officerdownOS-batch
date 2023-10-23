@@ -1,7 +1,7 @@
 # officerdownOS
 A text based batch made OS utilizing the Windows OS. Currently WIP, however will come soon.
 To start the OS, you need to click on startlev.bat.
-This is NESSICARY, as it preforms required checks for the user.
+This is NECESSARY, as it preforms required checks for the user.
 # The Desktop 
 The desktop is a simple, yet important component of officerdownOS. It shows all of your applications, suites, toolkits, etc.
 # Applications
