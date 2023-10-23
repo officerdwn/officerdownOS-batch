@@ -1,5 +1,19 @@
 @echo off
-goto desktop
+goto cred
+
+:cred
+cls
+set /p username=<username.user
+set /p password=<password.pass
+echo                                          login
+echo ----------------------------------------------------------------------------------------------
+echo Welcome to officerdownOS, %username%! 
+echo Please enter the password that you set up when you installed the Operating System!
+set /p login=
+if %login% == %password% goto desktop
+echo That is incorrect! Try again!
+pause
+goto cred
 
 :desktop 
 cls
@@ -36,7 +50,7 @@ goto desktop
 cls
 echo                                           About
 echo ----------------------------------------------------------------------------------------------
-echo  officerdownOS v0.0.1
-echo  Compiled 10/22/2023
+echo  officerdownOS v0.0.2
+echo  Compiled 10/23/2023
 pause
 goto desktop
