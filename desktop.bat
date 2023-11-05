@@ -20,37 +20,34 @@ cls
 echo                                       officerdownOS
 echo ----------------------------------------------------------------------------------------------
 echo.
-echo    ---------------                  ---------------                        -----------------   
+echo    ---------------                  ---------------                  ----------------                   
 echo.                                                                                     
 echo.                                                                                                              
-ECHO       POW!                           PRODUCTIVITY!                                 ?         
-echo                POP                                                                      
-echo   -----------------                 ----------------                       ------------------ 
+ECHO     PRODUCTIVITY!                           ?                             files
+echo.                                                                                     
+echo   -----------------                 ----------------                 -----------------                  
 echo.                                                                                             
-echo        games                         Office Suite                                About      
+echo      Office Suite                        About                            files
 echo.
 set /p desktopOptions=
-if %desktopOptions% == "games" goto games        
-if %desktopOptions% ==  "office" goto officeto
-if %desktopOptions% == "about"  goto about       
+if %desktopOptions% == files goto files        
+if %desktopOptions% ==  "office goto officeto
+if %desktopOptions% == about  goto about       
 echo " This is not recognized. Try again!"  
+pause
+goto desktop
+
 :officeto
 call office.bat
-pause
-goto desktop
 
-:games
-cls
-echo "Games is WIP"
-pause
-goto desktop
-
+:files
+call files.bat
 
 :about
 cls
 echo                                           About
 echo ----------------------------------------------------------------------------------------------
-echo  officerdownOS v0.0.2
-echo  Compiled 10/23/2023
+echo  officerdownOS v0.0.3
+echo  Compiled 11/05/2023
 pause
 goto desktop
