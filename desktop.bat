@@ -1,5 +1,7 @@
 @echo off
-goto cred
+if exist 1.log goto desktop
+if not exist 1.log goto cred
+
 
 :cred
 cls
@@ -16,10 +18,15 @@ pause
 goto cred
 
 :desktop 
+(
+
+echo hi
+
+)>1.log
 cls
 echo                                       officerdownOS
 echo ----------------------------------------------------------------------------------------------
-echo.
+echo                                   TYPE LOGOUT TO LOGOUT
 echo    ---------------                  ---------------                  ----------------                   
 echo.                                                                                     
 echo.                                                                                                              
@@ -31,8 +38,9 @@ echo      Office Suite                        About                            f
 echo.
 set /p desktopOptions=
 if %desktopOptions% == files goto files        
-if %desktopOptions% ==  "office goto officeto
-if %desktopOptions% == about  goto about       
+if %desktopOptions% ==  office goto officeto
+if %desktopOptions% == about  goto about  
+if %desktopOptions% == logout goto logout     
 echo " This is not recognized. Try again!"  
 pause
 goto desktop
@@ -47,7 +55,21 @@ call files.bat
 cls
 echo                                           About
 echo ----------------------------------------------------------------------------------------------
-echo  officerdownOS v0.0.3
-echo  Compiled 11/05/2023
+echo  officerdownOS Normal v1.1
+echo  Compiled 11/18/2023
 pause
 goto desktop
+
+:logout
+echo Logging out!
+del 1.log
+echo Do you want to shut down the pc? (Y/N)
+set /p yorn=
+if %yorn% == y goto y
+if %yorn% == n goto n
+
+:n 
+goto cred
+
+:y 
+shutdown -s
